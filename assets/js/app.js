@@ -40,18 +40,24 @@ $(function () {
 
   /*__ modal ______________________________________*/
 
-  $(".modal-movie-open").iziModal({
-    iframe: true,
-    history: false,
-    closeButton: true,
-    onOpening: function (modal, event) {
-      lenis.stop();
-      $("html, body").css("overflow", "hidden");
-    },
-    onClosing: function (modal, event) {
-      lenis.start();
-      $("html, body").css("overflow", "visible");
-    },
+  $("#modal-movie-open").on("click", function () {
+    $(".modal-movie-open").iziModal("open");
+    $(".modal-movie-open").iziModal({
+      iframe: true,
+      history: false,
+      closeButton: true,
+      onOpening: function (modal, event) {
+        lenis.stop();
+        $("html, body").css("overflow", "hidden");
+      },
+      onClosing: function (modal, event) {
+        lenis.start();
+        $("html, body").css("overflow", "visible");
+      },
+      onClosed: function (modal, event) {
+        $(".modal-movie-open").iziModal("destroy");
+      },
+    });
   });
 
   $(".modal-open").iziModal({

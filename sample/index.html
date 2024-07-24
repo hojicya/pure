@@ -52,11 +52,11 @@
   <body>
     <header id="header" class="header">HEADER</header>
     <main>
-      <a href="/sample">sampleへ</a>
-
       <div>
         <strong>モーダル</strong>
-        <button data-iziModal-open=".modal-movie-open--1">movie modal</button>
+        <button id="modal-movie-open" data-iziModal-open=".modal-movie-open--1">
+          movie modal
+        </button>
         <div
           class="modal-movie-open modal-movie-open--1"
           data-izimodal-iframeurl="https://www.youtube.com/embed/xxxx"
@@ -64,7 +64,7 @@
           <button class="close-button" data-izimodal-close=""></button>
         </div>
 
-        <button data-iziModal-open=".modal-open--1">modal</button>
+        <button data-iziModal-open=".modal-open--1">text modal</button>
         <div data-lenis-prevent class="modal-open modal-open--1">
           <div class="contents"></div>
           <button class="close-button" data-izimodal-close=""></button>
