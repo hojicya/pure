@@ -26,15 +26,15 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./assets/images/apple-touch-icon.png"
+      href="../assets/images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
-      href="./assets/images/android-chrome-192x192.png"
+      href="../assets/images/android-chrome-192x192.png"
       sizes="192x192"
     />
-    <link rel="icon" href="./assets/images/favicon.ico" />
+    <link rel="icon" href="../assets/images/favicon.ico" />
 
     <!-- CDN -->
     <link
@@ -46,13 +46,30 @@
     />
 
     <!-- StyleSheet -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
 
   <body>
     <header id="header" class="header">HEADER</header>
     <main>
-      <a href="/sample/">sampleへ</a>
+      <a href="/sample">sampleへ</a>
+
+      <div>
+        <strong>モーダル</strong>
+        <button data-iziModal-open=".modal-movie-open--1">movie modal</button>
+        <div
+          class="modal-movie-open modal-movie-open--1"
+          data-izimodal-iframeurl="https://www.youtube.com/embed/xxxx"
+        >
+          <button class="close-button" data-izimodal-close=""></button>
+        </div>
+
+        <button data-iziModal-open=".modal-open--1">modal</button>
+        <div data-lenis-prevent class="modal-open modal-open--1">
+          <div class="contents"></div>
+          <button class="close-button" data-izimodal-close=""></button>
+        </div>
+      </div>
     </main>
     <footer id="footer" class="footer">FOOTER</footer>
     <script
@@ -69,6 +86,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./assets/js/app.js"></script>
+    <script src="../assets/js/app.js"></script>
   </body>
 </html>

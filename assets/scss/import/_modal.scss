@@ -10,6 +10,11 @@
     height: auto !important;
     aspect-ratio: 16 / 9;
   }
+  .contents {
+    padding: 11% 4.4%;
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
   .close-button {
     position: absolute;
     top: 0;
