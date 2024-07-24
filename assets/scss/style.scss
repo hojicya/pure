@@ -1,12 +1,12 @@
 @charset "utf-8";
 
-@import "base/base";
-@import "base/font";
-@import "base/mixin";
-@import "base/reset";
-@import "base/variables";
+@use "base/mixin" as *;
+@use "base/variables" as *;
 
+@import "base/base";
+@import "base/reset";
+@import "import/header";
+@import "import/footer";
+@import "import/modal";
 @import "import/buttons";
-@import "import/form";
-@import "import/pagination";
 @import "import/title";

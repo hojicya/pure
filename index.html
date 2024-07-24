@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <head
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"
+  >
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>title</title>
-    <meta name="description" content="" />
-    <link rel="canonical" href="" />
-    <link rel="apple-touch-icon" href="" />
-    <link rel="icon" href="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="{{url}}" />
 
     <!-- OGP -->
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="{{title}}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:site_name" content="" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{url}}assets/images/ogp.jpg" />
+    <meta property="og:site_name" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@twitterId" />
 
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:card" content="summary" />
-    <!-- OGP end -->
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/images/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link rel="icon" href="./assets/images/favicon.ico" />
 
+    <!-- CDN -->
+
+    <!-- StyleSheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
+    <header>HEADER</header>
+    <main>
+      <a href="/sample">sampleへ</a>
+    </main>
+    <footer>FOOTER</footer>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/app.js"></script>
   </body>
 </html>

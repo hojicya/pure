@@ -1,14 +1,10 @@
 @charset "utf-8";
 
-// ====================================================
-// mixin  フォントサイズ：VW 幅1200とき　フォントサイズ12pxにしたい時　@include fz_vw(12,1200);
-// ====================================================
-@function get_vw($size, $viewport: 1200) {
-  $rate: 100;
+@function get_vw($size, $viewport: 390) {
+  $rate: calc(100 / $viewport);
   @return $rate * $size * 1vw;
 }
-
-@mixin fz_vw($font_size: 10, $viewport: 1200) {
+@mixin fz_vw($font_size: 10, $viewport: 390) {
   font-size: $font_size * 1px;
   font-size: get_vw($font_size, $viewport);
 }
@@ -25,6 +21,17 @@
   }
 }
 
+/*__ font _______________________*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&family=Shippori+Mincho+B1&display=swap");
+
+@mixin font {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*__ breakpoint _______________________*/
 $breakpoints: (
   "xs": "screen and (max-width: 320px)",
   "sm": "screen and (max-width: 449px)",
