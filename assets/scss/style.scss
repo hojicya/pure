@@ -3,18 +3,9 @@
 @import "import/reset";
 @import "import/val";
 @import "import/mixin";
-@import "import/common";
+@import "import/base";
 
 @import "section/title";
 @import "section/buttons";
 @import "section/header";
 @import "section/footer";
-
-@import "import/lib/slick-theme";
-@import "import/lib/slick";
-@import "import/lib/remodal-default-theme";
-@import "import/lib/remodal";
-
-/*==================================
-  mv
-==================================*/

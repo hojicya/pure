@@ -1,11 +1,14 @@
-// gsap.registerPlugin(ScrollTrigger)
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 $(function () {
-  const spBreakPoint = window.matchMedia("(min-width: 768px)").matches;
+  var headerHeight = $("#header").outerHeight();
 
   // // ヘッダーの高さ分main下げる
-  // var headerHeight = $("#header").outerHeight();
   // $("main").css("margin-top", headerHeight);
+  // $(".mv").css("height", `calc(100svh - ${headerHeight}px)`);
 
   // リロード時フェードイン
   gsap.to("body", {
@@ -15,21 +18,23 @@ $(function () {
 
   /*__ scroll ______________________________________*/
 
-  // 慣性スクロール
-  const lenis = new Lenis({
-    lerp: 0.1,
-    duration: 1,
-    smoothTouch: true,
+  // コンテンツフェードイン
+  const contents = gsap.utils.toArray(".js-fadeIn");
+  contents.forEach((content) => {
+    gsap.from(content, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: content,
+        start: "top 70%",
+        // markers: true,
+      },
+    });
   });
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
   // スムーススクロール
-  $('a[href^="#"]').click(function () {
+  $('a.anc[href^="#"]').click(function () {
     var speed = 500;
     var href = $(this).attr("href");
     var target = $(href == "#" || href == "" ? "html" : href);
@@ -39,4 +44,15 @@ $(function () {
   });
 
   /*__ modal ______________________________________*/
+  const modalLinks = document.querySelectorAll(".js-modal");
+  modalLinks.forEach((link) => {
+    $(link).modaal({
+      content_source: link.getAttribute("href"),
+      custom_class: "modal__default",
+    });
+  });
+
+  $(".js-modal-movie").modaal({
+    type: "video",
+  });
 });

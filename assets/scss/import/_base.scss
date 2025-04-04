@@ -1,0 +1,52 @@
+body {
+  color: $colorBlack;
+  @include font;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-align: justify;
+  word-break: break-all;
+  overflow-x: hidden;
+  opacity: 0;
+  @include mq() {
+    font-size: 14px;
+  }
+}
+
+a,
+button {
+  transition: all 0.3s;
+  @include hover {
+    opacity: 0.7;
+  }
+}
+
+.l-inner {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.u-pc--only {
+  @include mq() {
+    display: none;
+  }
+}
+
+.u-sp--only {
+  display: none;
+  @include mq() {
+    display: block;
+  }
+}
+
+.u-text-center {
+  text-align: center;
+}
+.u-text-left {
+  text-align: left;
+}
+.u-text-right {
+  text-align: right;
+}
